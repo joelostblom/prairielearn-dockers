@@ -1,0 +1,24 @@
+# Use the prairielearn modified version of rocker
+FROM prairielearn/workspace-rstudio:9f9814901a0a9d3c5d46c37e07fcf0abe96b0327
+
+# root required to install rocker scripts - https://github.com/rocker-org/rocker-versioned2/tree/master/scripts
+USER root
+
+# Install rocker scripts that are required for all courses
+RUN /bin/sh -c /rocker_scripts/install_tidyverse.sh
+
+# rstudio is the default user for rocker based images
+USER rstudio
+
+# Define additional packages not included in rocker that are required for all courses
+# eg.
+# ENV R_PACKAGES="nycflights13 gapminder palmerpenguins"
+
+# Install the pre-defined R packages
+# eg. 
+# RUN install2.r -e $R_PACKAGES
+
+# Copy the custom rstudio-prefs.json file to the correct location to enable auto-save
+COPY rstudio-prefs.json /home/rstudio/.config/rstudio/rstudio-prefs.json
+
+# End base image
