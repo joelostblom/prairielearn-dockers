@@ -1,0 +1,10 @@
+# Use the base image provided by MDS
+FROM zacwarham/ubc-mds-pl:base-r
+
+# Define additional packages that are specific to this course
+ENV R_PACKAGES="gapminder"
+
+# Install the pre-defined R packages
+RUN install2.r -e $R_PACKAGES
+
+# End course image
