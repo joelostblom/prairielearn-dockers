@@ -25,5 +25,3 @@ RUN mkdir -p /tmp/jupyter_config/lab/user-settings/@jupyterlab/docmanager-extens
 
 # Copy the custom plugin.jupyterlab-settings file to the correct location to increase auto-save frequency
 COPY plugin.jupyterlab-settings /tmp/jupyter_config/lab/user-settings/@jupyterlab/docmanager-extension/
-
-# End base image
