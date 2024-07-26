@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
   push: 
     paths: 
-      - 'python-base/Dockerfile'
+      - 'base-python/Dockerfile'
       
 jobs:
   push_to_registry:
