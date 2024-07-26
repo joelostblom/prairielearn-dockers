@@ -11,7 +11,7 @@ RUN /bin/sh -c /rocker_scripts/install_tidyverse.sh
 USER rstudio
 
 # Define additional packages not included in rocker that are required for all courses
-# eg. 
+# eg.
 # ENV R_PACKAGES="nycflights13 gapminder palmerpenguins"
 
 # Install the pre-defined R packages
