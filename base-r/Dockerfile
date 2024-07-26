@@ -20,5 +20,3 @@ USER rstudio
 
 # Copy the custom rstudio-prefs.json file to the correct location to enable auto-save
 COPY rstudio-prefs.json /home/rstudio/.config/rstudio/rstudio-prefs.json
-
-# End base image
