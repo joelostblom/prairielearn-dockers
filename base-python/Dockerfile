@@ -17,7 +17,7 @@ USER jovyan
 # ENV PYTHON_PACKAGES="scipy numpy pandas matplotlib"
 
 # Install the pre-defined Python packages
-# eg. 
+# eg.
 # RUN pip install --no-cache-dir $PYTHON_PACKAGES
 
 # Create directories for user settings
