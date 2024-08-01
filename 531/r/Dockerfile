@@ -1,5 +1,5 @@
 # Use the base image provided by MDS
-FROM zacwarham/ubc-mds-pl:base-r
+FROM ubc-mds/base-r:fc31fb0
 
 # Define additional packages that are specific to this course
 ENV R_PACKAGES="gapminder"
