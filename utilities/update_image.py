@@ -29,7 +29,7 @@ assert args.image.startswith("ubcmds/"), "You must use an image from the MDS doc
 assert ':' not in args.image, "Please do not include the tag in the image argument. Use --tag instead"
 assert ':' not in args.tag and '/' not in args.tag, "Please do not include the image in the tag argument. Use --image instead"
 assert args.tag is not 'latest', "We do not allow the use of the latest tag"
-exit()
+
 # Initialize a dictionary to store messages
 messages = {}
 
