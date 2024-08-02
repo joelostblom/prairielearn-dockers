@@ -105,7 +105,36 @@ This section is to provide further details on the additional utilities included 
 
 #### Using `update_image.py`
 
-> These instructions are to be updated once the script is updated to match the Github actions workflows
+Please remeber that all images must be in the format `ubcmds/{name}-{language}` as explained at the top of this file. 
+
+The `update_image.py` script has the following options:
+
+|                     | Function                                                    | Values                                  | Required |
+|---------------------|-------------------------------------------------------------|-----------------------------------------|----------|
+| `--pl_repo`         | Provide the location of the questions to update             | A directory                             | ✓        |
+| `--question_folder` | Used if you only want to update a single question at a time | A directory (must be inside `--pl_repo` |          |
+| `--language`        | The language used in the provided image                     | R, Python, ...                          | ✓        |
+| `--image`           | The `ubcmds` Dockerhub image name                           | `ubcmds/{name}-{language}`              | ✓        |
+| `--tag`             | The tag of the image named after the git commit             | alpha-numeric value                     | ✓        |
+| `--log_output`      | Used to save the logs to a file when running                | True or False                           |          |
+
+Format
+
+> ````
+> python utilities/update_image.py --pl_repo <> --question_folder <> --language <> --image <> --tag <>
+>````
+
+Examples
+
+> To update all R workspace questions in 531 to a new version
+> > ````
+> > python utilities/update_image.py --pl_repo ../pl-ubc-dsci531/ --language r --image ubcmds/531-r --tag abcdefg
+> >````
+
+> To update a single Python workspace question in 571 to a new version
+> > ````
+> > python utilities/update_image.py --pl_repo ../pl-ubc-dsci571/ --question_folder others/workspace_test --language python --image ubcmds/571-python --tag abcdefg
+> >````
 
 #### Updating the flowchart
 
