@@ -116,19 +116,19 @@ The `update_image.py` script has the following options:
 | `--language`        | The language used in the provided image                     | R, Python, ...                          | ✓        |
 | `--image`           | The `ubcmds` Dockerhub image name                           | `ubcmds/{name}-{language}`              | ✓        |
 | `--tag`             | The tag of the image named after the git commit             | alpha-numeric value                     | ✓        |
-| `--log_output`      | Used to save the logs to a file when running                | True or False                           |          |
+| `--log_output`      | Used to save the logs to a file when running                | True or False (default)                           |          |
 
 Format
 
 > ````
-> python utilities/update_image.py --pl_repo <> --question_folder <> --language <> --image <> --tag <>
+> python utilities/update_image.py --pl_repo <> --question_folder <> --language <> --image <> --tag <> --log_output <>
 >````
 
 Examples
 
-> To update all R workspace questions in 531 to a new version
+> To update all R workspace questions in 531 to a new version and save the output to a file
 > > ````
-> > python utilities/update_image.py --pl_repo ../pl-ubc-dsci531/ --language r --image ubcmds/531-r --tag abcdefg
+> > python utilities/update_image.py --pl_repo ../pl-ubc-dsci531/ --language r --image ubcmds/531-r --tag abcdefg --log_output True
 > >````
 
 > To update a single Python workspace question in 571 to a new version
