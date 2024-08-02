@@ -77,7 +77,7 @@ Every time an image is updated, you need to ensure that the questions in your co
 
 ### Creating Questions
 
-If you are creating a workspace question for the first time, please follow the instructions in our [Autotest Migration](https://github.com/VincentLiu3/prairielearn-migrationa-autotest) repository to learn how to create a workspace question
+If you are creating a workspace question for the first time, please follow the instructions in our [Autotest Migration](https://github.com/VincentLiu3/prairielearn-migrationa-autotest) repository to learn how to create a workspace question.
 
 ### Update Questions
 
