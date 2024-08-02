@@ -8,7 +8,7 @@ Unsure of where to start? Please take a look at our [operations flowchart](./uti
 
 ---
 
-### Base Images
+## Base Images
 
 Our base images extensions of the defautls provided by PrairieLearn. These include [Python (with Jupyter Lab)](https://hub.docker.com/r/prairielearn/workspace-jupyterlab-python) and [R (with RStudio)](https://hub.docker.com/r/prairielearn/workspace-rstudio). The purpose of these base images is to define requirements that are mandatory for all MDS courses.
 
@@ -19,11 +19,11 @@ Our base images extensions of the defautls provided by PrairieLearn. These inclu
 
 The instructions provided here assume you have cloned the repository to your computer and have Docker installed. This is due to the fact we **strongly** recommend testing locally before pushing any changes to this repository.
 
-#### Creating a New Base Image
+### Creating a New Base Image
 
 Currently we provided two base images, one for [Python](./base-python/) and one for [R](./base-r/). These instructions are provided to cover the steps required for implementing a new base image such as for providing a new language (SQL) or for topics that have multiple courses (Visualisation 1 and 2). However, very careful consideration is required to ensure that the image is needed to avoid introducing additional points of failure in the process (for example, forgetting to update an image because it uses a non-standard base).
 
-##### Instructions
+#### Instructions
 1. Create a new folder in the root directory eg. `base-sql`
 2. Create the Dockerfile with any relevant requirements
 3. Build and test the Dockerfile both locally and in a PrairieLearn Workspace environment
@@ -32,11 +32,11 @@ Currently we provided two base images, one for [Python](./base-python/) and one 
 6. Grab the name and tag from the [MDS Dockerhub](https://hub.docker.com/u/ubcmds)
 7. Follow the instructions for [Creating](#creating-a-new-course) or [Updating](#updating-an-existing-course) a course to implement the image
 
-#### Updating a Base Image
+### Updating a Base Image
 
 If a requirement changes that affects all courses, such as changing a dataset or implementing a new version of a package, you will need to update the base image accordingly. These instructions presume that a base image was already [created](#creating-a-new-base-image) at some point.
 
-##### Instructions
+#### Instructions
 1. Locate the Dockerfile of the relevant image
 2. Make the relevant changes to the file
 3. Build and test the Dockerfile both locally and in a PrairieLearn Workspace environment
@@ -46,11 +46,11 @@ If a requirement changes that affects all courses, such as changing a dataset or
 
 ---
 
-### Course Images
+## Course Images
 
 Each course should have it's own image to install any packages or settings that are specific to the workspace of that course. Do not use the image for another course as it may be updated without you knowing and could cause your workspace to break if the tag gets updated.
 
-#### Creating a New Course
+### Creating a New Course
 
 1. Create a new folder in this repository named after the course (eg. `531`)
 2. Create the relevant subdirectories for each required language (eg. `531/python`, `531/r`)
@@ -60,7 +60,7 @@ Each course should have it's own image to install any packages or settings that 
 6. Build and test the Dockerfile both locally and in a PrairieLearn Workspace environment
 7. Follow the instructions for [Updating Questions](#update-questions) to implement the changes
 
-#### Updating an Existing Course
+### Updating an Existing Course
 
 1. Grab the name and tag from the [MDS Dockerhub](https://hub.docker.com/u/ubcmds) for the most recent base image. **Note:** you (or someone else) may have changed this in the [Updating a Base Image](#updating-a-base-image) instructions since the last course update
 2. Update `FROM ubcmds` in Dockerfile to match the base image
@@ -71,21 +71,21 @@ Each course should have it's own image to install any packages or settings that 
 
 ---
 
-### Updating PrairieLearn
+## Updating PrairieLearn
 
 Every time an image is updated, you need to ensure that the questions in your course are updated to reflect the changes. This involves both modifying the individual questions to use the new image and syncing the updated image to the course (similar to how you would sync changes to a question).
 
-#### Creating Questions
+### Creating Questions
 
 If you are creating a workspace question for the first time, please follow the instructions in our [Autotest Migration](https://github.com/VincentLiu3/prairielearn-migrationa-autotest) repository to learn how to create a workspace question
 
-#### Update Questions
+### Update Questions
 
 1. Make sure have the correct tag from the [MDS Dockerhub](https://hub.docker.com/u/ubcmds) for the most recent changes made in the course image (eg. `ubcmds/531-r:052d124`)
 2. Run the `utilities/update_image.py` script with the correct parameters. See [Using update_image](#using-update_imagepy) for details on this script
 3. Follow the instructions for [Syncing to  PrairieLearn](#sync-to-prairielearn) to push the changes
 
-#### Sync to PrairieLearn
+### Sync to PrairieLearn
 
 1. Open PrairieLearn to the sync page for the course. See the [Instructor Guide](https://github.com/UBC-MDS/prairielearn-instructor-guide) if you are unsure where this is
 2. Click on `Pull from remote repository` to update questions
@@ -99,11 +99,11 @@ If the updates are not reflected in your PrairieLearn workspace, check the FAQ a
 
 ---
 
-### Utilities
+## Utilities
 
 This section is to provide further details on the additional utilities included with this repository.
 
-#### Using `update_image.py`
+### Using `update_image.py`
 
 Please remeber that all images must be in the format `ubcmds/{name}-{language}` as explained at the top of this file. 
 
@@ -118,13 +118,13 @@ The `update_image.py` script has the following options:
 | `--tag`             | The tag of the image named after the git commit             | alpha-numeric value                     | ✓        |
 | `--log_output`      | Used to save the logs to a file when running                | True or False (default)                           |          |
 
-Format
+#### Format
 
 > ````
 > python utilities/update_image.py --pl_repo <> --question_folder <> --language <> --image <> --tag <> --log_output <>
 >````
 
-Examples
+#### Examples
 
 > To update all R workspace questions in 531 to a new version and save the output to a file
 > > ````
@@ -136,13 +136,13 @@ Examples
 > > python utilities/update_image.py --pl_repo ../pl-ubc-dsci571/ --question_folder others/workspace_test --language python --image ubcmds/571-python --tag abcdefg
 > >````
 
-#### Updating the flowchart
+### Updating the flowchart
 
 The [flowchart](./utilities/flowchart.png) is provided as a visual guide on what instructions to follow when making changes in this repository. If the workflow of this repository changes, the flowchart may need to be updated. This diagram was created using [draw.io](https://app.diagrams.net/) and can be updated using the associated [docker.drawio](./utilities/docker.drawio) file.
 
 ---
 
-### FAQ
+## FAQ
 
 Here are some frequently asked questions when using this repository.
 
