@@ -91,8 +91,9 @@ If you are creating a workspace question for the first time, please follow the i
 2. Click on `Pull from remote repository` to update questions
 3. After it has completed return to the sync page
 4. Click on `Sync` next to all Docker Images
-5. Verify that the `Image Name` matches the desired version from [MDS Dockerhub](https://hub.docker.com/u/ubcmds) (eg. `ubcmds/531-r:052d124`)
-6. Specifically test for the new changes in a workspace question (eg. import a new package)
+5. After it has completed return to the sync page
+6. Verify that the `Image Name` matches the desired version from [MDS Dockerhub](https://hub.docker.com/u/ubcmds) (eg. `ubcmds/531-r:052d124`)
+7. Specifically test for the new changes in a workspace question (eg. import a new package)
 
 If the updates are not reflected in your PrairieLearn workspace, check the FAQ and flowchart to ensure you have made the correct changes.
 
