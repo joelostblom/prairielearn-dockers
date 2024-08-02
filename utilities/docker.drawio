@@ -66,11 +66,6 @@
         <mxCell id="DTKB45BRtGOAprkU8uaD-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-30" target="DTKB45BRtGOAprkU8uaD-38" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="oII2Y6nGuyd2Db91_Gvz-1" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="DTKB45BRtGOAprkU8uaD-51">
-          <mxGeometry x="-0.4461" y="4" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-30" value="Complete Updating an Existing Course" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
           <mxGeometry x="233" y="525" width="100" height="100" as="geometry" />
         </mxCell>
