@@ -2,6 +2,8 @@
 
 PrairieLearn Workspaces require a Docker image with the relevant IDE and languages installed. PrairieLearn provides a base image for both [Python (with Jupyter Lab)](https://hub.docker.com/r/prairielearn/workspace-jupyterlab-python) and [R (with RStudio)](https://hub.docker.com/r/prairielearn/workspace-rstudio). This repository contains the MDS base Dockerfile which provides some additional configuration requirements that are standard across all courses (namely, autosave functionality) for both images. It also contains course specific Dockerfiles to allow instructors to install packages that are specific for that course (e.g. SciPy or palmerpenguins).
 
+**Note** the naming of images is important due to the way our `update_image.py` script works. An image must be in the format of `ubcmds/{name}-{language}` where name can be any alpha-numeric characters and language must be either `python` or `r` (others can be added if needed). The script should be robust enough to catch for incorrect names but it is possible edge cases have been missed. Please pay close attention to these requirements when creating an image. The tag of the image will always be automatically generated based on the Github commit. `Latest` should not be used at any point.
+
 Unsure of where to start? Please take a look at our [operations flowchart](./utilities/flowchart.png) for how to proceed. Or if you are still stuck, please contact one of the [MDS team](https://ubc-mds.github.io/team/).
 
 ---

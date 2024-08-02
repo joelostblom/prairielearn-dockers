@@ -14,16 +14,20 @@ def str2bool(v):
 
 # Initialize argument parser
 parser = argparse.ArgumentParser()
-parser.add_argument("--pl_repo")
+parser.add_argument("--pl_repo", required=True)
 parser.add_argument("--question_folder")
-parser.add_argument("--language", default="python")
-parser.add_argument("--image")
+parser.add_argument("--language", required=True)
+parser.add_argument("--image", required=True)
+parser.add_argument("--tag", required=True)
 parser.add_argument("--log_output", default=False, type=str2bool)
 args = parser.parse_args()
 
 # Assert valid inputs
-assert args.language in ["r", "python"]
-assert args.image.startswith("zacwarham/ubc-mds-pl:"), "You must use an image from the MDS docker repository"
+assert args.language in ["r", "python"], f"This script does not support the language {args.language}"
+assert args.image.endswith("-" + args.language), "Your image does not match the language provided"
+assert args.image.startswith("ubcmds/"), "You must use an image from the MDS docker repository (eg. ubcmds/base-r)"
+assert ':' not in args.image, "Please do not include the tag in the image argument. Use --tag instead"
+assert ':' not in args.tag and '/' not in args.tag, "Please do not include the image in the tag argument. Use --image instead"
 
 # Initialize a dictionary to store messages
 messages = {}
@@ -45,15 +49,15 @@ def process_info_file(info_file):
         
         image = question_info["workspaceOptions"]["image"]
 
-        if not image.endswith(args.language):
+        if ("-" + args.language + ":") not in image:
             add_message("Language mismatch", f"Language is '{args.language}' but image was '{image}' in file {info_file} - skipping")
             return
 
-        if not args.image.endswith(args.language):
-            add_message("Image mismatch", f"Language is '{args.language}' but image was '{args.image}' - skipping")
+        if image == (args.image + ":" + args.tag):
+            add_message("Image exists", f"Image already matches '{args.image}:{args.tag}' in file {info_file} - skipping")
             return
 
-        question_info["workspaceOptions"]["image"] = args.image
+        question_info["workspaceOptions"]["image"] = args.image + ":" + args.tag
 
         with open(info_file, "w") as f:
             json.dump(question_info, f, indent=4)
@@ -93,6 +97,10 @@ for key in sorted(messages.keys()):
 # Print messages to console
 for line in output:
     print(line)
+
+# Print number of changes to console
+success_count = len(messages.get("Success", []))
+print(f"\nChanged {success_count} file(s)")
 
 # Write messages to log file if log_output is True
 if args.log_output:
