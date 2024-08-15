@@ -18,6 +18,7 @@ parser.add_argument("--pl_repo", required=True)
 parser.add_argument("--question_folder")
 parser.add_argument("--language", required=True)
 parser.add_argument("--image", required=True)
+parser.add_argument("--image_type", required=True)
 parser.add_argument("--tag", required=True)
 parser.add_argument("--log_output", default=False, type=str2bool)
 args = parser.parse_args()
@@ -28,45 +29,80 @@ assert args.image.endswith("-" + args.language), "Your image does not match the 
 assert args.image.startswith("ubcmds/"), "You must use an image from the MDS docker repository (eg. ubcmds/base-r)"
 assert ':' not in args.image, "Please do not include the tag in the image argument. Use --tag instead"
 assert ':' not in args.tag and '/' not in args.tag, "Please do not include the image in the tag argument. Use --image instead"
-assert args.tag is not 'latest', "We do not allow the use of the latest tag"
+assert args.tag != 'latest', "We do not allow the use of the latest tag"
+assert args.image_type in ["workspace", "autograder"], f"This script does not support the image type {args.image_type}"
 
 # Initialize a dictionary to store messages
 messages = {}
+
 
 def add_message(key, message):
     if key not in messages:
         messages[key] = []
     messages[key].append(message)
 
-def process_info_file(info_file):
+
+def update_info(question_info, option):
+
+    question_info[option]["image"] = args.image + ":" + args.tag
+
     try:
-        with open(info_file, "r") as f:
-            question_info = json.load(f)
-        
-        if 'workspaceOptions' not in question_info:
-            if args.question_folder:
-                add_message("Not a workspace question", f"Not a workspace question in file {info_file}")
-            return
-        
-        image = question_info["workspaceOptions"]["image"]
-
-        if ("-" + args.language + ":") not in image:
-            add_message("Language mismatch", f"Language is '{args.language}' but image was '{image}' in file {info_file} - skipping")
-            return
-
-        if image == (args.image + ":" + args.tag):
-            add_message("Image exists", f"Image already matches '{args.image}:{args.tag}' in file {info_file} - skipping")
-            return
-
-        question_info["workspaceOptions"]["image"] = args.image + ":" + args.tag
-
         with open(info_file, "w") as f:
             json.dump(question_info, f, indent=4)
 
-        add_message("Success", f"Wrote image '{question_info['workspaceOptions']['image']}' to '{info_file}'")
+        add_message("Success", f"Wrote image '{question_info[option]['image']}' to '{info_file}'")
 
     except Exception as e:
         add_message("Error", f"Error processing file {info_file}: {e}")
+
+    return
+
+
+def validate_input(question_info, option):
+    image = question_info[option]["image"]
+    
+    if ("-" + args.language + ":") not in image and image != ("prairielearn/grader-" + args.language):
+        add_message("Language mismatch", f"Language is '{args.language}' but image was '{image}' in file {info_file} - skipping")
+        return False
+
+    if image == (args.image + ":" + args.tag):
+        add_message("Image exists", f"Image already matches '{args.image}:{args.tag}' in file {info_file} - skipping")
+        return False
+    
+    return True
+    
+
+def process_info_file(info_file):
+
+    with open(info_file, "r") as f:
+        question_info = json.load(f)
+
+    
+    try:
+        if args.image_type == "workspace":
+            if 'workspaceOptions' not in question_info:
+                if args.question_folder:
+                    add_message("Not a workspace question", f"Not a workspace question in file {info_file}")
+                return # Stop processing file
+            
+            if validate_input(question_info, "workspaceOptions"):
+                update_info(question_info, "workspaceOptions")
+                
+        elif args.image_type == "autograder":
+            if 'externalGradingOptions' not in question_info:
+                    if args.question_folder:
+                        add_message("Not an external autograder question", f"'externalGradingOptions' not found in file {info_file}")
+                    return # Stop processing file
+            
+            if validate_input(question_info, "externalGradingOptions"):
+                update_info(question_info, "externalGradingOptions")
+    
+    except Exception as e:
+        add_message("Error", f"Error processing file {info_file}: {e}")
+
+    finally:
+        return
+
 
 def find_info_files(directory):
     info_files = []
