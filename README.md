@@ -2,11 +2,11 @@
 
 This repository is intended as a collection of Docker Images that are used by the [MDS team](https://ubc-mds.github.io/team/) at the [University of British Columbia](https://ubc.ca) for their PrairieLearn courses. This involves a combination of [Workspace](https://prairielearn.readthedocs.io/en/latest/workspaces/) images and [External Autograder](https://prairielearn.readthedocs.io/en/latest/externalGrading/) images. The information of what each of these are and how to use or create them are detailed below.
 
-##### Workspaces
+#### Workspaces
 
 PrairieLearn Workspaces require a Docker image with the relevant IDE and languages installed. The PrairieLearn team provides a base image for both [Python (with Jupyter Lab)](https://hub.docker.com/r/prairielearn/workspace-jupyterlab-python) and [R (with RStudio)](https://hub.docker.com/r/prairielearn/workspace-rstudio). This repository contains the MDS base Dockerfile which provides some additional configuration requirements that are standard across all courses (namely, autosave functionality) for both images. It also contains course specific Dockerfiles to allow instructors to install packages that are specific for that course (e.g. SciPy or palmerpenguins).
 
-##### External Autograder
+#### External Autograder
 
 PrairieLearn also has the capability to use Docker images to grade questions, typically those involving user created code. Similar to their workspaces images, the PrairieLearn team provides their own images for [Python](https://hub.docker.com/r/prairielearn/grader-python) and [R](https://hub.docker.com/r/prairielearn/grader-r) among [other languages](https://hub.docker.com/u/prairielearn). This repository contains the Dockerfiles utilised in our courses that are based upon these images but install additional packages that are not already include (e.g. infer).
 
