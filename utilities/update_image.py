@@ -2,16 +2,6 @@ import json
 import argparse
 import os
 
-def str2bool(v):
-    if isinstance(v, bool):
-        return v
-    if v.lower() in ("true", "t"):
-        return True
-    elif v.lower() in ("false", "f"):
-        return False
-    else:
-        raise argparse.ArgumentTypeError("Boolean value expected.")
-
 # Initialize argument parser
 parser = argparse.ArgumentParser()
 parser.add_argument("--pl_repo", required=True)
@@ -20,7 +10,7 @@ parser.add_argument("--language", required=True)
 parser.add_argument("--image", required=True)
 parser.add_argument("--image_type", required=True)
 parser.add_argument("--tag", required=True)
-parser.add_argument("--log_output", default=False, type=str2bool)
+parser.add_argument("--log_output", default="console")
 args = parser.parse_args()
 
 # Assert valid inputs
@@ -31,6 +21,7 @@ assert ':' not in args.image, "Please do not include the tag in the image argume
 assert ':' not in args.tag and '/' not in args.tag, "Please do not include the image in the tag argument. Use --image instead"
 assert args.tag != 'latest', "We do not allow the use of the latest tag"
 assert args.image_type in ["workspace", "autograder"], f"This script does not support the image type {args.image_type}"
+assert args.log_output in ["console", "file", "both"] or args.log_output.endswith(".txt"), f"'--log_output' must be 'console', 'both', 'file' or end in '.txt'"
 
 # Initialize a dictionary to store messages
 messages = {}
@@ -132,15 +123,34 @@ for key in sorted(messages.keys()):
         output.append(f"  - {message}")
 
 # Print messages to console
-for line in output:
-    print(line)
+if args.log_output in ["both", "console"]:
+    for line in output:
+        print(line)
 
 # Print number of changes to console
 success_count = len(messages.get("Success", []))
 print(f"\nChanged {success_count} file(s)")
 
-# Write messages to log file if log_output is True
-if args.log_output:
-    with open("output_log.txt", "w") as log_file:
-        for line in output:
-            log_file.write(line + "\n")
+# Write messages to log file based on --log_output
+if args.log_output in ["both", "file"] or args.log_output.endswith(".txt"):
+    if len(output) > 0:
+        log_filename = "output_log.txt"
+        
+        if args.log_output.endswith(".txt"):
+            log_filename = args.log_output
+            parent_dir = os.path.dirname(log_filename)
+
+            if parent_dir and not os.path.exists(parent_dir):
+                log_filename = os.path.basename(log_filename)
+                print(f"Log Error: Could not find the directory '{parent_dir}'. Saving log as '{log_filename}' in the current directory.")
+        
+        with open(log_filename, "w") as log_file:
+            for line in output:
+                log_file.write(line + "\n")
+        
+        print(f"Log saved to: '{log_filename}'")
+    
+    else:
+        print("Skipping log file due to empty output")
+
+
