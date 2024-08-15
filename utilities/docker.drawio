@@ -1,11 +1,11 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" version="24.7.6">
   <diagram name="Page-1" id="WTJ0QXmMrmOAsI4dAKFI">
-    <mxGraphModel dx="594" dy="1578" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2074" dy="1098" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="DTKB45BRtGOAprkU8uaD-7" value="Start Here" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="40" y="50" width="100" height="60" as="geometry" />
+          <mxGeometry x="15" y="81" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-8" target="DTKB45BRtGOAprkU8uaD-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -16,12 +16,9 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-8" value="Does a base &lt;br&gt;image exist for &lt;br&gt;your course?" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
-          <mxGeometry x="228" y="25" width="110" height="110" as="geometry" />
+          <mxGeometry x="361" y="56" width="110" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="DTKB45BRtGOAprkU8uaD-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-7" target="DTKB45BRtGOAprkU8uaD-8" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="DTKB45BRtGOAprkU8uaD-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-10" target="DTKB45BRtGOAprkU8uaD-20" edge="1">
+        <mxCell id="DTKB45BRtGOAprkU8uaD-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-10" target="DTKB45BRtGOAprkU8uaD-20" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-77" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="DTKB45BRtGOAprkU8uaD-21" vertex="1" connectable="0">
@@ -30,7 +27,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-10" value="Does a course&lt;br&gt;image exist for&lt;div&gt;your course?&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
-          <mxGeometry x="386" y="200" width="110" height="110" as="geometry" />
+          <mxGeometry x="519" y="231" width="110" height="110" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-11" target="DTKB45BRtGOAprkU8uaD-29" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -41,10 +38,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-11" value="Do you need&amp;nbsp;&lt;div&gt;to install a new&lt;br&gt;package?&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
-          <mxGeometry x="386" y="360" width="110" height="110" as="geometry" />
+          <mxGeometry x="519" y="391" width="110" height="110" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-12" value="Complete Create a Base Image" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="556" y="30" width="100" height="100" as="geometry" />
+          <mxGeometry x="689" y="61" width="100" height="100" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-10" target="DTKB45BRtGOAprkU8uaD-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -54,22 +51,22 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="DTKB45BRtGOAprkU8uaD-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-20" target="DTKB45BRtGOAprkU8uaD-38" edge="1">
+        <mxCell id="DTKB45BRtGOAprkU8uaD-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-20" target="DTKB45BRtGOAprkU8uaD-38" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-20" value="Complete Create a New Course" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="40" y="205" width="100" height="100" as="geometry" />
+          <mxGeometry x="366" y="561" width="100" height="100" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-29" value="Do you need&amp;nbsp;&lt;div&gt;to update any questions?&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
-          <mxGeometry x="551" y="360" width="110" height="110" as="geometry" />
+          <mxGeometry x="684" y="391" width="110" height="110" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-30" target="DTKB45BRtGOAprkU8uaD-38" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-30" value="Complete Updating an Existing Course" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="233" y="525" width="100" height="100" as="geometry" />
+          <mxGeometry x="366" y="731" width="100" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="DTKB45BRtGOAprkU8uaD-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-32" target="DTKB45BRtGOAprkU8uaD-30" edge="1">
+        <mxCell id="DTKB45BRtGOAprkU8uaD-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-32" target="DTKB45BRtGOAprkU8uaD-30" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-81" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="DTKB45BRtGOAprkU8uaD-35" vertex="1" connectable="0">
@@ -86,13 +83,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-32" value="Is this package&lt;div&gt;course specific?&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
-          <mxGeometry x="386" y="520" width="110" height="110" as="geometry" />
+          <mxGeometry x="519" y="551" width="110" height="110" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-33" target="DTKB45BRtGOAprkU8uaD-38" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-33" value="Complete Updating a Base Image" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="391" y="700" width="100" height="100" as="geometry" />
+          <mxGeometry x="524" y="731" width="100" height="100" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-11" target="DTKB45BRtGOAprkU8uaD-32" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -106,22 +103,22 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-38" value="Complete Update&lt;br&gt;Questions" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="40" y="800" width="100" height="100" as="geometry" />
+          <mxGeometry x="157" y="831" width="100" height="100" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-39" value="Complete Sync to PrairieLearn" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" parent="1" vertex="1">
-          <mxGeometry x="40" y="950" width="100" height="100" as="geometry" />
+          <mxGeometry x="157" y="981" width="100" height="100" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-40" value="End" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="551" y="1050" width="100" height="60" as="geometry" />
+          <mxGeometry x="684" y="1081" width="100" height="60" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-42" value="Have you&amp;nbsp;&lt;div&gt;tested&lt;br&gt;the changes&lt;br&gt;in PL?&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" parent="1" vertex="1">
-          <mxGeometry x="228" y="945" width="110" height="110" as="geometry" />
+          <mxGeometry x="356" y="976" width="110" height="110" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-8" target="DTKB45BRtGOAprkU8uaD-10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="283" y="160" />
-              <mxPoint x="441" y="160" />
+              <mxPoint x="416" y="191" />
+              <mxPoint x="574" y="191" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -133,7 +130,7 @@
         <mxCell id="DTKB45BRtGOAprkU8uaD-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-12" target="DTKB45BRtGOAprkU8uaD-10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="606" y="255" />
+              <mxPoint x="739" y="286" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -156,27 +153,104 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="DTKB45BRtGOAprkU8uaD-72" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-42" target="DTKB45BRtGOAprkU8uaD-42" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="388" y="1000" />
-              <mxPoint x="388" y="890" />
-              <mxPoint x="283" y="890" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="DTKB45BRtGOAprkU8uaD-85" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="DTKB45BRtGOAprkU8uaD-72" vertex="1" connectable="0">
-          <mxGeometry x="-0.8687" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="DTKB45BRtGOAprkU8uaD-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1.01;entryY=0.61;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-29" target="DTKB45BRtGOAprkU8uaD-38" edge="1">
+        <mxCell id="DTKB45BRtGOAprkU8uaD-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DTKB45BRtGOAprkU8uaD-29" target="DTKB45BRtGOAprkU8uaD-38" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="DTKB45BRtGOAprkU8uaD-82" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="DTKB45BRtGOAprkU8uaD-73" vertex="1" connectable="0">
           <mxGeometry x="-0.9369" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-2" value="Is this for a workspace or autograder?" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="152" y="56" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="_19oARSYlYmnXgCoxyBE-2" target="DTKB45BRtGOAprkU8uaD-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-4" value="Workspace" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_19oARSYlYmnXgCoxyBE-3">
+          <mxGeometry x="-0.3263" relative="1" as="geometry">
+            <mxPoint x="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_19oARSYlYmnXgCoxyBE-5" target="_19oARSYlYmnXgCoxyBE-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-13" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_19oARSYlYmnXgCoxyBE-11">
+          <mxGeometry x="-0.6589" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_19oARSYlYmnXgCoxyBE-5" target="_19oARSYlYmnXgCoxyBE-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-14" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_19oARSYlYmnXgCoxyBE-12">
+          <mxGeometry x="-0.8683" y="1" relative="1" as="geometry">
+            <mxPoint x="-1" y="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-5" value="Does a course&lt;br&gt;image exist for&lt;div&gt;your course?&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="152" y="231" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="_19oARSYlYmnXgCoxyBE-2" target="_19oARSYlYmnXgCoxyBE-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-7" value="External Autograder" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_19oARSYlYmnXgCoxyBE-6">
+          <mxGeometry x="-0.3204" y="-1" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-9" value="Complete Create a New External Autograde Image" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="10" y="396" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="_19oARSYlYmnXgCoxyBE-10" target="_19oARSYlYmnXgCoxyBE-23">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="207" y="531" />
+              <mxPoint x="60" y="531" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-10" value="Complete Updating an Existing External Autograde Image" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="157" y="396" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="DTKB45BRtGOAprkU8uaD-42" target="DTKB45BRtGOAprkU8uaD-42">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="486" y="1031" />
+              <mxPoint x="486" y="921" />
+              <mxPoint x="411" y="921" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-22" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_19oARSYlYmnXgCoxyBE-21">
+          <mxGeometry x="-0.6462" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="_19oARSYlYmnXgCoxyBE-23" target="DTKB45BRtGOAprkU8uaD-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-28" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_19oARSYlYmnXgCoxyBE-27">
+          <mxGeometry x="-0.8254" y="-2" relative="1" as="geometry">
+            <mxPoint y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-23" value="Do you need&amp;nbsp;&lt;div&gt;to update any questions?&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="5" y="556" width="110" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="_19oARSYlYmnXgCoxyBE-9" target="_19oARSYlYmnXgCoxyBE-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="_19oARSYlYmnXgCoxyBE-23" target="DTKB45BRtGOAprkU8uaD-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-29" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="_19oARSYlYmnXgCoxyBE-26">
+          <mxGeometry x="-0.9584" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="_19oARSYlYmnXgCoxyBE-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="DTKB45BRtGOAprkU8uaD-7" target="_19oARSYlYmnXgCoxyBE-2">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
