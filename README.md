@@ -1,14 +1,22 @@
 # MDS PrairieLearn Dockers
 
-PrairieLearn Workspaces require a Docker image with the relevant IDE and languages installed. PrairieLearn provides a base image for both [Python (with Jupyter Lab)](https://hub.docker.com/r/prairielearn/workspace-jupyterlab-python) and [R (with RStudio)](https://hub.docker.com/r/prairielearn/workspace-rstudio). This repository contains the MDS base Dockerfile which provides some additional configuration requirements that are standard across all courses (namely, autosave functionality) for both images. It also contains course specific Dockerfiles to allow instructors to install packages that are specific for that course (e.g. SciPy or palmerpenguins).
+This repository is intended as a collection of Docker Images that are used by the [MDS team](https://ubc-mds.github.io/team/) at the [University of British Columbia](https://ubc.ca) for their PrairieLearn courses. This involves a combination of [Workspace](https://prairielearn.readthedocs.io/en/latest/workspaces/) images and [External Autograder](https://prairielearn.readthedocs.io/en/latest/externalGrading/) images. The information of what each of these are and how to use or create them are detailed below.
 
-**Note** the naming of images is important due to the way our `update_image.py` script works. An image must be in the format of `ubcmds/{name}-{language}` where name can be any alpha-numeric characters and language must be either `python` or `r` (others can be added if needed). The script should be robust enough to catch for incorrect names but it is possible edge cases have been missed. Please pay close attention to these requirements when creating an image. The tag of the image will always be automatically generated based on the Github commit. `Latest` should not be used at any point.
+#### Workspaces
+
+PrairieLearn Workspaces require a Docker image with the relevant IDE and languages installed. The PrairieLearn team provides a base image for both [Python (with Jupyter Lab)](https://hub.docker.com/r/prairielearn/workspace-jupyterlab-python) and [R (with RStudio)](https://hub.docker.com/r/prairielearn/workspace-rstudio). This repository contains the MDS base Dockerfile which provides some additional configuration requirements that are standard across all courses (namely, autosave functionality) for both images. It also contains course specific Dockerfiles to allow instructors to install packages that are specific for that course (e.g. SciPy or palmerpenguins).
+
+#### External Autograder
+
+PrairieLearn also has the capability to use Docker images to grade questions, typically those involving user created code. Similar to their workspaces images, the PrairieLearn team provides their own images for [Python](https://hub.docker.com/r/prairielearn/grader-python) and [R](https://hub.docker.com/r/prairielearn/grader-r) among [other languages](https://hub.docker.com/u/prairielearn). This repository contains the Dockerfiles utilised in our courses that are based upon these images but install additional packages that are not already include (e.g. infer).
+
+**Note** the naming of images is important due to the way our `update_image.py` script works. A Workspace image must be in the format of `ubcmds/{name}-{language}` and an External Autograder image must be in the format of `ubcmds/{name}-autograder-{language}`. In both instances, name can be any alpha-numeric characters and language must be either `python` or `r` (others can be added if needed). The script should be robust enough to catch for incorrect names but it is possible edge cases have been missed. Please pay close attention to these requirements when creating an image. The tag of the image will always be automatically generated based on the Github commit. `Latest` should not be used at any point.
 
 Unsure of where to start? Please take a look at our [operations flowchart](./utilities/flowchart.png) for how to proceed. Or if you are still stuck, please contact one of the [MDS team](https://ubc-mds.github.io/team/).
 
 ---
 
-## Base Images
+## Base Workspace Images
 
 Our base images extensions of the defautls provided by PrairieLearn. These include [Python (with Jupyter Lab)](https://hub.docker.com/r/prairielearn/workspace-jupyterlab-python) and [R (with RStudio)](https://hub.docker.com/r/prairielearn/workspace-rstudio). The purpose of these base images is to define requirements that are mandatory for all MDS courses.
 
@@ -19,7 +27,7 @@ Our base images extensions of the defautls provided by PrairieLearn. These inclu
 
 The instructions provided here assume you have cloned the repository to your computer and have Docker installed. This is due to the fact we **strongly** recommend testing locally before pushing any changes to this repository.
 
-### Creating a New Base Image
+### Creating a New Base Workspace Image
 
 Currently we provided two base images, one for [Python](./base-python/) and one for [R](./base-r/). These instructions are provided to cover the steps required for implementing a new base image such as for providing a new language (SQL) or for topics that have multiple courses (Visualisation 1 and 2). However, very careful consideration is required to ensure that the image is needed to avoid introducing additional points of failure in the process (for example, forgetting to update an image because it uses a non-standard base).
 
@@ -32,7 +40,7 @@ Currently we provided two base images, one for [Python](./base-python/) and one 
 6. Grab the name and tag from the [MDS Dockerhub](https://hub.docker.com/u/ubcmds)
 7. Follow the instructions for [Creating](#creating-a-new-course) or [Updating](#updating-an-existing-course) a course to implement the image
 
-### Updating a Base Image
+### Updating a Base Workspace Image
 
 If a requirement changes that affects all courses, such as changing a dataset or implementing a new version of a package, you will need to update the base image accordingly. These instructions presume that a base image was already [created](#creating-a-new-base-image) at some point.
 
@@ -46,28 +54,54 @@ If a requirement changes that affects all courses, such as changing a dataset or
 
 ---
 
-## Course Images
+## Course Workspace Images
 
 Each course should have it's own image to install any packages or settings that are specific to the workspace of that course. Do not use the image for another course as it may be updated without you knowing and could cause your workspace to break if the tag gets updated.
 
-### Creating a New Course
+### Creating a New Course Workspace Image
 
 1. Create a new folder in this repository named after the course (eg. `531`)
 2. Create the relevant subdirectories for each required language (eg. `531/python`, `531/r`)
-3. Copy one of the existing course Dockerfiles and update the packages or create your own from scratch
+3. Copy one of the existing course [Dockerfiles](531/r/Dockerfile) and update the packages or create your own from scratch
 4. Grab the name and tag from the [MDS Dockerhub](https://hub.docker.com/u/ubcmds) for the most recent base image.
 5. Update `FROM ubcmds` in Dockerfile to match the base image
 6. Build and test the Dockerfile both locally and in a PrairieLearn Workspace environment
 7. Follow the instructions for [Updating Questions](#update-questions) to implement the changes
 
-### Updating an Existing Course
+### Updating an Existing Course Workspace Image
 
 1. Grab the name and tag from the [MDS Dockerhub](https://hub.docker.com/u/ubcmds) for the most recent base image. **Note:** you (or someone else) may have changed this in the [Updating a Base Image](#updating-a-base-image) instructions since the last course update
 2. Update `FROM ubcmds` in Dockerfile to match the base image
-3. Make any further updates to the Dockerfile that you require
+3. Make any further updates to the Dockerfile that you require (e.g. change packages in `ENV R_PACKAGES=""`)
 4. Build and test the Dockerfile both locally and in a PrairieLearn Workspace environment
 5. Push updates to repository and wait for Github action to run
 6. Follow the instructions for [Updating Questions](#update-questions) to implement the changes
+
+---
+
+## External Autograder Images
+
+Given that the only changes required for External Autograder Images is installing new packages, the MDS does not have it's own *Base Image* like we do for Workspace images. Instead, all of our Course External Autograder images are directly on-top of the ones provided by the [PrairieLearn Team](https://hub.docker.com/u/prairielearn).
+
+### Creating a New External Autograder Image
+
+1. Create a new folder in this repository named after the course (eg. `531`)
+2. Create the relevant subdirectories for each required language (eg. `531/autograder-python`, `531/autograder-r`)
+3. Copy one of the existing External Autograder Image [Dockerfiles](552/autograder-r/Dockerfile) and update the packages or create your own from scratch
+4. Grab the name and tag from the [PrairieLearn Dockerhub](https://hub.docker.com/u/prairielearn) for the most recent external grader base image.
+5. Update `FROM *` in Dockerfile to match the base image
+6. Build and test the Dockerfile both locally and in a PrairieLearn Workspace environment
+7. Follow the instructions for [Updating Questions](#update-questions) to implement the changes
+
+### Updating an Existing External Autograde Image
+
+1. Grab the name and tag from the [PrairieLearn Dockerhub](https://hub.docker.com/u/prairielearn) for the most recent external grader base image.
+2. Navigate to the relevant Dockerfile (e.g. `552/autograder-r/Dockerfile`)
+3. Update `FROM *` in Dockerfile to match the base image
+4. Make any further updates to the Dockerfile that you require (e.g. change packages in `ENV R_PACKAGES=""`)
+5. Build and test the Dockerfile both locally and in a PrairieLearn Workspace environment
+6. Push updates to repository and wait for Github action to run
+7. Follow the instructions for [Updating Questions](#update-questions) to implement the changes
 
 ---
 
@@ -109,32 +143,38 @@ Please remeber that all images must be in the format `ubcmds/{name}-{language}` 
 
 The `update_image.py` script has the following options:
 
-|                     | Function                                                    | Values                                  | Required |
-|---------------------|-------------------------------------------------------------|-----------------------------------------|----------|
-| `--pl_repo`         | Provide the location of the questions to update             | A directory                             | ✓        |
-| `--question_folder` | Used if you only want to update a single question at a time | A directory (must be inside `--pl_repo` |          |
-| `--language`        | The language used in the provided image                     | R, Python, ...                          | ✓        |
-| `--image`           | The `ubcmds` Dockerhub image name                           | `ubcmds/{name}-{language}`              | ✓        |
-| `--tag`             | The tag of the image named after the git commit             | alpha-numeric value                     | ✓        |
-| `--log_output`      | Used to save the logs to a file when running                | True or False (default)                           |          |
+|                     | Function                                                    | Values                                                              | Required |
+|---------------------|-------------------------------------------------------------|---------------------------------------------------------------------|----------|
+| `--pl_repo`         | Provide the location of the questions to update             | A directory                                                         | ✓        |
+| `--question_folder` | Used if you only want to update a single question at a time | A directory (must be inside `--pl_repo`)                            |          |
+| `--language`        | The language used in the provided image                     | R, Python, ...                                                      | ✓        |
+| `--image`           | The `ubcmds` Dockerhub image name                           | `ubcmds/{name}-{language}` or `ubcmds/{name}-autograder-{language}` | ✓        |
+| `--image_type`      | What type of image are you updating                         | workspace or autograder                                             | ✓        |
+| `--tag`             | The tag of the image named after the git commit             | alpha-numeric value                                                 | ✓        |
+| `--log_output`      | Used to save the logs to a file when running                | console (default), file, both, *.txt                                |          |
 
 #### Format
 
 > ````
-> python utilities/update_image.py --pl_repo <> --question_folder <> --language <> --image <> --tag <> --log_output <>
->````
+> python utilities/update_image.py --pl_repo <> --question_folder <> --language <> --image <> --image_type <> --tag <> --log_output <>
+> ````
 
 #### Examples
 
-> To update all R workspace questions in 531 to a new version and save the output to a file
+> To update all R workspace questions in 531 to a new version and save the output to a specific filename
 > > ````
-> > python utilities/update_image.py --pl_repo ../pl-ubc-dsci531/ --language r --image ubcmds/531-r --tag abcdefg --log_output True
+> > python utilities/update_image.py --pl_repo ../pl-ubc-dsci531/ --language r --image ubcmds/531-r --image_type workspace --tag abcdefg --log_output 531-r.txt
 > >````
 
 > To update a single Python workspace question in 571 to a new version
 > > ````
-> > python utilities/update_image.py --pl_repo ../pl-ubc-dsci571/ --question_folder others/workspace_test --language python --image ubcmds/571-python --tag abcdefg
+> > python utilities/update_image.py --pl_repo ../pl-ubc-dsci571/ --question_folder others/workspace_test --language python --image ubcmds/571-python --image_type workspace --tag abcdefg
 > >````
+
+> To update all R External Autograder image and log output to console and a file
+> > ````
+> > python utilities/update_image.py --pl_repo ../pl-ubc-dsci531/ --language r --image ubcmds/531-r --image_type autograder --tag abcdefg --log_output both
+> > ````
 
 ### Updating the flowchart
 
