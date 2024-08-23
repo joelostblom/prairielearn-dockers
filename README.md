@@ -10,7 +10,15 @@ PrairieLearn Workspaces require a Docker image with the relevant IDE and languag
 
 PrairieLearn also has the capability to use Docker images to grade questions, typically those involving user created code. Similar to their workspaces images, the PrairieLearn team provides their own images for [Python](https://hub.docker.com/r/prairielearn/grader-python) and [R](https://hub.docker.com/r/prairielearn/grader-r) among [other languages](https://hub.docker.com/u/prairielearn). This repository contains the Dockerfiles utilised in our courses that are based upon these images but install additional packages that are not already include (e.g. infer).
 
-**Note** the naming of images is important due to the way our `update_image.py` script works. A Workspace image must be in the format of `ubcmds/{name}-{language}` and an External Autograder image must be in the format of `ubcmds/{name}-autograder-{language}`. In both instances, name can be any alpha-numeric characters and language must be either `python` or `r` (others can be added if needed). The script should be robust enough to catch for incorrect names but it is possible edge cases have been missed. Please pay close attention to these requirements when creating an image. The tag of the image will always be automatically generated based on the Github commit. `Latest` should not be used at any point.
+#### Naming Images
+
+The naming of images is important due to the way our `update_image.py` script works. A Workspace image must be in the format of `ubcmds/{name}-{language}` and an External Autograder image must be in the format of `ubcmds/{name}-autograder-{language}`. In both instances, name can be any alpha-numeric characters and language must be either `python` or `r` (others can be added if needed). The script should be robust enough to catch for incorrect names but it is possible edge cases have been missed. Please pay close attention to these requirements when creating an image. The tag of the image will always be automatically generated based on the Github commit. `Latest` should not be used at any point.
+
+#### Existing Packages
+
+Please make sure to check the images upstream when creating and updating images in this repository. For Workspaces, please check the relevant Docker Hub images hosted by PrairieLearn ([Python](https://hub.docker.com/r/prairielearn/workspace-jupyterlab-python) and [R](https://hub.docker.com/r/prairielearn/workspace-rstudio)) and our own *base* images ([Python](./base-python/) and [R](./base-r/)). We do not have *base* images for External Graders and instead build directly downstream of  the PrairieLearn images ([Python](https://hub.docker.com/r/prairielearn/grader-python) and [R](https://hub.docker.com/r/prairielearn/grader-r)).
+
+#### Where to start?
 
 Unsure of where to start? Please take a look at our [operations flowchart](./utilities/flowchart.png) for how to proceed. Or if you are still stuck, please contact one of the [MDS team](https://ubc-mds.github.io/team/).
 
@@ -143,7 +151,7 @@ Please remeber that all images must be in the format `ubcmds/{name}-{language}` 
 
 The `update_image.py` script has the following options:
 
-|                     | Function                                                    | Values                                                              | Required |
+| Arguments           | Function                                                    | Values                                                              | Required |
 |---------------------|-------------------------------------------------------------|---------------------------------------------------------------------|----------|
 | `--pl_repo`         | Provide the location of the questions to update             | A directory                                                         | ✓        |
 | `--question_folder` | Used if you only want to update a single question at a time | A directory (must be inside `--pl_repo`)                            |          |
