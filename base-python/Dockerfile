@@ -1,5 +1,5 @@
 # Use the prairielearn modified version of jupyter lab
-FROM prairielearn/workspace-jupyterlab-python:6a60c7ceefdee6a0145f64987367f6e40e6a5618
+FROM prairielearn/workspace-jupyterlab-python:92c4d45d172f248640753e49dd6e4557431e3495
 
 # root required to install for ubuntu commands
 USER root
