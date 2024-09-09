@@ -3,7 +3,7 @@ FROM prairielearn/grader-python:latest
 
 # Define additional packages not included in Python that are required for all courses
 # eg.
-ENV PYTHON_PACKAGES="scipy numpy pandas matplotlib"
+ENV PYTHON_PACKAGES="nycflights13"
 
 # Install the pre-defined Python packages
 # eg.
