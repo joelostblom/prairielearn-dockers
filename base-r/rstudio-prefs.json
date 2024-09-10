@@ -4,5 +4,6 @@
     "reuse_sessions_for_project_links": true,
     "posix_terminal_shell": "bash",
     "auto_save_on_blur": true,
-    "auto_save_on_idle": "commit"
+    "auto_save_on_idle": "commit",
+    "insert_native_pipe_operator": true
 }
