@@ -52,12 +52,9 @@ RUN python -m pip install anywidget
 RUN pip3 cache purge
 
 COPY jupyter_server_config.py /etc/jupyter/
-#COPY plugin.jupyterlab-settings /etc/jupyter/
-COPY ipython_config.py /etc/ipython/
 
 RUN sed -i 's/"default": 120/"default": 1/' /opt/conda/share/jupyter/lab/schemas/@jupyterlab/docmanager-extension/plugin.json
 RUN sed -i 's/"default": 120/"default": 1/' /opt/conda/lib/python3.11/site-packages/jupyterlab/schemas/@jupyterlab/docmanager-extension/plugin.json
-
 
 EXPOSE 8080
 
